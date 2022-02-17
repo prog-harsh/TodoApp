@@ -9,7 +9,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: Colors.white,
+        color: Color(0xFFEFEEEE),
         height: MediaQuery.of(context).size.height * 0.84,
         child: _todo.isEmpty
             ? Center(
@@ -19,26 +19,45 @@ class Home extends StatelessWidget {
                 ),
               )
             : ListView.builder(
-                padding: const EdgeInsets.all(10),
+                padding: const EdgeInsets.all(5),
                 itemCount: _todo.length,
                 itemBuilder: (ctx, i) {
-                  return Card(
-                    elevation: 6,
+                  return Container(
+                    // elevation: 6,
+                    margin: const EdgeInsets.all(6),
+                    // color: Colors.white,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFEFEEEE),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.white.withOpacity(0.8),
+                          offset: -Offset(7.0, 7.0),
+                          blurRadius: 8,
+                          // spreadRadius: 1.0,
+                        ),
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.1),
+                          offset: Offset(7.0, 7.0),
+                          blurRadius: 8,
+                          // spreadRadius: 1.0,
+                        ),
+                      ],
+                    ),
                     child: Padding(
                       padding: const EdgeInsets.all(5.0),
                       child: ListTile(
                         title: Text(
                           _todo[i].description,
                           style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.w600,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w400,
                           ),
                         ),
                         trailing: IconButton(
                           icon: Icon(
                             Icons.delete_forever_outlined,
                             color: Colors.red,
-                            size: 28,
+                            size: 25,
                           ),
                           onPressed: () => remove(_todo[i].id),
                         ),

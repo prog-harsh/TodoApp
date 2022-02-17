@@ -81,7 +81,7 @@ class _MyHomeState extends State<MyHome> {
       id: desc + random.nextDouble().toString(),
       description: desc,
     );
-    print(newTodo.id);
+    //print(newTodo.id);
     setState(() {
       _todo.add(newTodo);
     });
