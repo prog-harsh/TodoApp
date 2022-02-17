@@ -9,10 +9,10 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: Color(0xFFEFEEEE),
+        color: const Color(0xFFEFEEEE),
         height: MediaQuery.of(context).size.height * 0.84,
         child: _todo.isEmpty
-            ? Center(
+            ? const Center(
                 child: Image(
                   height: 200,
                   image: AssetImage('image/empty.png'),
@@ -27,7 +27,7 @@ class Home extends StatelessWidget {
                     margin: const EdgeInsets.all(6),
                     // color: Colors.white,
                     decoration: BoxDecoration(
-                      color: Color(0xFFEFEEEE),
+                      color: const Color(0xFFEFEEEE),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.white.withOpacity(0.8),
@@ -48,15 +48,15 @@ class Home extends StatelessWidget {
                       child: ListTile(
                         title: Text(
                           _todo[i].description,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
                         trailing: IconButton(
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.delete_forever_outlined,
-                            color: Colors.red,
+                            color: Color.fromARGB(255, 244, 67, 54),
                             size: 25,
                           ),
                           onPressed: () => remove(_todo[i].id),

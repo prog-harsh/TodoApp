@@ -53,7 +53,6 @@ class _MyHomeState extends State<MyHome> {
 
   void loadData() {
     List<String>? string = sharedPreferences.getStringList('spTodo');
-    print(string);
     if (string != null) {
       _todo = string.map((e) => Todo.fromJson(json.decode(e))).toList();
       setState(() {});
@@ -95,7 +94,7 @@ class _MyHomeState extends State<MyHome> {
     return Scaffold(
       backgroundColor: Colors.pink,
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Todos',
           style: TextStyle(
             fontWeight: FontWeight.bold,
@@ -110,7 +109,7 @@ class _MyHomeState extends State<MyHome> {
           _startNewTodo(context);
           setState(() {});
         },
-        child: Icon(
+        child: const Icon(
           Icons.add_sharp,
           size: 30,
         ),
