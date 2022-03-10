@@ -92,7 +92,7 @@ class _MyHomeState extends State<MyHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.pink,
+      backgroundColor: const Color(0xFFEFEEEE),
       appBar: AppBar(
         title: const Text(
           'Todos',

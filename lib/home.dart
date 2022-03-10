@@ -9,8 +9,6 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: const Color(0xFFEFEEEE),
-        height: MediaQuery.of(context).size.height * 0.84,
         child: _todo.isEmpty
             ? const Center(
                 child: Image(
@@ -23,9 +21,7 @@ class Home extends StatelessWidget {
                 itemCount: _todo.length,
                 itemBuilder: (ctx, i) {
                   return Container(
-                    // elevation: 6,
                     margin: const EdgeInsets.all(6),
-                    // color: Colors.white,
                     decoration: BoxDecoration(
                       color: const Color(0xFFEFEEEE),
                       boxShadow: [
@@ -33,13 +29,11 @@ class Home extends StatelessWidget {
                           color: Colors.white.withOpacity(0.8),
                           offset: -Offset(7.0, 7.0),
                           blurRadius: 8,
-                          // spreadRadius: 1.0,
                         ),
                         BoxShadow(
                           color: Colors.black.withOpacity(0.1),
                           offset: Offset(7.0, 7.0),
                           blurRadius: 8,
-                          // spreadRadius: 1.0,
                         ),
                       ],
                     ),
